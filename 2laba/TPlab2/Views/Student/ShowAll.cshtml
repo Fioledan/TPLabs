@@ -1,0 +1,56 @@
+﻿@model TPlab2.Models.StudentModel[]
+
+@using TPlab2.Helpers
+
+@{
+    ViewBag.Title = "Все данные";
+    bool useInnerHelper = (bool)ViewData["UseInnerHelper"];
+    string tableTitle = (string)ViewData["TableTitle"];
+}
+
+@helper RenderStudentsInner(TPlab2.Models.StudentModel[] students, string title)
+{
+    int i = 0;
+
+    <h3>@title</h3>
+
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Номер</th>
+            <th>ФИО</th>
+            <th>Группа</th>
+            <th>Возраст</th>
+            <th>Телефон</th>
+            <th>Средний балл</th>
+        </tr>
+
+        @while (i < students.Length)
+        {
+            <tr>
+                <td>@students[i].Id</td>
+                <td>@students[i].FullName</td>
+                <td>@students[i].Group</td>
+                <td>@students[i].Age</td>
+                <td>@students[i].Phone</td>
+                <td>@students[i].AverageScore</td>
+            </tr>
+
+            i++;
+        }
+    </table>
+}
+
+<h2>Все данные</h2>
+
+@if (useInnerHelper)
+{
+    @RenderStudentsInner(Model, tableTitle)
+}
+else
+{
+    @Html.RenderStudentsOuter(Model, tableTitle)
+}
+
+<p>
+    @Html.ActionLink("Вернуться назад", "Index", "Student")
+</p>

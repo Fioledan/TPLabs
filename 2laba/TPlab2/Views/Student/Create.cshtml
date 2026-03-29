@@ -1,0 +1,60 @@
+﻿@model TPlab2.Models.StudentModel
+
+@{
+    ViewBag.Title = "Добавление данных";
+}
+
+<h2>Добавление данных</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.LabelFor(m => m.Id)
+        <br />
+        @Html.EditorFor(m => m.Id)
+    </div>
+
+    <br />
+
+    <div>
+        @Html.LabelFor(m => m.FullName)
+        <br />
+        @Html.EditorFor(m => m.FullName)
+    </div>
+
+    <br />
+
+    <div>
+        @Html.LabelFor(m => m.Group)
+        <br />
+        @Html.EditorFor(m => m.Group)
+    </div>
+
+    <br />
+
+    <div>
+        @Html.LabelFor(m => m.Age)
+        <br />
+        @Html.EditorFor(m => m.Age)
+    </div>
+
+    <br />
+
+    <div>
+        @Html.LabelFor(m => m.Phone)
+        <br />
+        @Html.EditorFor(m => m.Phone)
+    </div>
+
+    <br />
+
+    <div>
+        @Html.LabelFor(m => m.AverageScore)
+        <br />
+        @Html.EditorFor(m => m.AverageScore)
+    </div>
+
+    <br />
+
+    <input type="submit" value="Сохранить" />
+}

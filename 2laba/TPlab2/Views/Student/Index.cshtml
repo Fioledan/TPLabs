@@ -1,0 +1,27 @@
+﻿@model TPlab2.Models.StudentModel
+
+@{
+    ViewBag.Title = "Просмотр данных";
+}
+
+<h2>Просмотр данных</h2>
+
+<div>
+    @Html.LabelForModel()
+</div>
+
+<div>
+    @Html.DisplayForModel()
+</div>
+
+<p>
+    @Html.ActionLink("Добавить", "Create", "Student")
+</p>
+
+<p>
+    @Html.ActionLink("Редактировать", "Edit", "Student")
+</p>
+
+<p>
+    @Html.ActionLink("Показать все данные", "ShowAll", "Student")
+</p>
