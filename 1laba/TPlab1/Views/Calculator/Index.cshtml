@@ -1,0 +1,76 @@
+﻿@model TPlab1.Models.CalculatorModel
+
+@{
+    ViewBag.Title = "Калькулятор";
+}
+
+<h2>Калькулятор</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.LabelFor(m => m.Operand1)
+        <br />
+        @Html.TextBoxFor(m => m.Operand1, new { @class = "textBoxStyle" })
+        <br />
+        @Html.ValidationMessageFor(m => m.Operand1)
+    </div>
+
+    <br />
+
+    <div>
+        @Html.LabelFor(m => m.Operand2)
+        <br />
+        @Html.TextBoxFor(m => m.Operand2)
+        <br />
+        @Html.ValidationMessageFor(m => m.Operand2)
+    </div>
+
+    <br />
+
+    <div>
+        <label>Операция</label>
+        <br />
+        @Html.RadioButtonFor(m => m.Operation, "+") <span>+</span>
+        @Html.RadioButtonFor(m => m.Operation, "-") <span>-</span>
+        @Html.RadioButtonFor(m => m.Operation, "*") <span>*</span>
+        @Html.RadioButtonFor(m => m.Operation, "/") <span>/</span>
+    </div>
+
+    <br />
+
+    <div>
+        <input type="submit" name="btn" value="Вычислить" />
+        <input type="submit" name="btn" value="Очистить" />
+    </div>
+
+    <br />
+
+    <div>
+        @Html.LabelFor(m => m.Result)
+        <br />
+        @Html.TextBoxFor(m => m.Result, new { @readonly = "readonly" })
+    </div>
+
+    <br />
+
+    <div>
+        @if (Model.Result == ViewBag.CheckValue)
+        {
+            <p>Результат равен значению ViewBag.</p>
+        }
+        else
+        {
+            <p>Результат не равен значению ViewBag.</p>
+        }
+    </div>
+}
+
+<p>
+    @Html.ActionLink("Показать результат на второй странице", "Result", "Calculator")
+</p>
+
+@section InfoSection
+{
+    <p>Значение для сравнения: @ViewBag.CheckValue</p>
+}

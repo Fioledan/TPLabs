@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Результат операции";
+}
+
+<h2>Результат операции</h2>
+
+@if (ViewBag.OperationInfo != null)
+{
+    <p>Исходная строка: @ViewBag.OperationInfo</p>
+    <p>После обработки: @ViewBag.ChangedInfo</p>
+}
+else
+{
+    <p>Нет данных для отображения.</p>
+}
+
+<p>
+    @Html.ActionLink("Вернуться к калькулятору", "Index", "Calculator")
+</p>
