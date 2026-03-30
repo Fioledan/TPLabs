@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Ввод данных";
+}
+
+<h2>Ввод данных о таблице базы данных</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        <label>Идентификатор</label><br />
+        @Html.TextBox("id")
+    </div>
+
+    <br />
+
+    <div>
+        <label>Название таблицы</label><br />
+        @Html.TextBox("tableName")
+    </div>
+
+    <br />
+
+    <div>
+        <label>Количество столбцов</label><br />
+        @Html.TextBox("columnCount")
+    </div>
+
+    <br />
+
+    <div>
+        <label>Описание</label><br />
+        @Html.TextBox("description")
+    </div>
+
+    <br />
+
+    <div>
+        <label>Первичный ключ</label><br />
+        @Html.CheckBox("isPrimary")
+    </div>
+
+    <br />
+
+    <div>
+        <label>СУБД</label><br />
+        @Html.TextBox("dbms")
+    </div>
+
+    <br />
+
+    <input type="submit" value="Отправить" />
+}

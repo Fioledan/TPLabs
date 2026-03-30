@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Результат";
+}
+
+<h2>Введённые данные</h2>
+
+<p>Идентификатор: @ViewBag.Id</p>
+<p>Название таблицы: @ViewBag.TableName</p>
+<p>Количество столбцов: @ViewBag.ColumnCount</p>
+<p>Описание: @ViewBag.Description</p>
+<p>Первичный ключ: @ViewBag.IsPrimary</p>
+<p>СУБД: @ViewBag.Dbms</p>
+
+<p>
+    @Html.ActionLink("Назад", "Index", "Database")
+</p>
